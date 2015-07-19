@@ -26,7 +26,7 @@ See [LICENSE](LICENSE).
 2. Execute `qmake` to create Makefile. 
 3. Execute `make` to compile.
 
-When finished you will see a "lib" directory that contain a shared library called "libposjs".
+When finished you will see a "lib" directory that contain a shared library called "libposjs.so".
 
 ## Supported devices
 
@@ -40,9 +40,5 @@ Default devices:
 * Barcode scanner MJ_tech V3.00
 * Magnetic card reader model MSR100 
 * Cash drawers, as the cash drawers are connected to the printer all Epson compatible cash drawers should work. 
-
-See [using other devices section](docs/supporteddevices.md).
-
-## Using libposjs
 
 
