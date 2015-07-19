@@ -20,7 +20,7 @@ See [LICENSE](LICENSE).
 
  ```sh
   git clone https://github.com/Zimtronic/libposjs.git
-  cd posjs
+  cd libposjs
   ```
   
 2. Execute `qmake` to create Makefile. 
