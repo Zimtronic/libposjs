@@ -83,17 +83,43 @@ void POSDriver::processESCPOSPrinterASCIICommand(QString command)
                 path = d.left(l.at(0).toInt());
                 d = d.right(d.length() - path.length());
                 l = d.split(':');
-                if(l.length() > 1)
+                if(l.length() == 2)
                 {
                     printer->printImage(path, l.at(0).toInt(), l.at(1).toInt());
                 }
             }
             break;
         case '6':
-            printer->init();
+            d = command.right(command.length()-1);
+            l = d.split(':');
+            if(l.length() > 1)
+            {
+                d = d.right(d.length() - l.at(0).length() - 1);
+                path = d.left(l.at(0).toInt());
+                d = d.right(d.length() - path.length());
+                l = d.split(':');
+                if(l.length() == 5)
+                {
+                    printer->printBarcode(path, l.at(0).toInt(), l.at(1).toInt(),
+                                                l.at(2).toInt(), l.at(3).toInt(),
+                                                l.at(4).toInt());
+                }
+            }
             break;
         case '7':
-            printer->init();
+            d = command.right(command.length()-1);
+            l = d.split(':');
+            if(l.length() > 1)
+            {
+                d = d.right(d.length() - l.at(0).length() - 1);
+                path = d.left(l.at(0).toInt());
+                d = d.right(d.length() - path.length());
+                l = d.split(':');
+                if(l.length() == 2)
+                {
+                    printer->printQRCode(path, l.at(0).toInt(), l.at(1).toInt());
+                }
+            }
             break;
         case '8':
             printer->init();
